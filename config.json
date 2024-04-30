@@ -1,0 +1,21 @@
+{
+  "influxdb": {
+    "server": "localhost",
+    "port": 8086,
+    "database": "analog_alarm_incident",
+    "username": "",
+    "password": "",
+    "measurement":"area1",
+    "poll": 5000
+  },
+  "mqtt": {
+    "url": "mqtt://localhost:1883",
+    "options": {
+      "clientId": "influxdb-web-monitor",
+      "username": "",
+      "password": ""
+    },
+    "topic": "influxdb/status"
+  }
+}
+
