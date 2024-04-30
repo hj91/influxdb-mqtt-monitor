@@ -87,9 +87,9 @@ async function fetchNewData() {
         // Data has not changed
         console.log('Data has not changed.');
         // Send response with dataChanged false and lastChangeTime
-        sendDataResponse({ dataChanged: false, lastChangeTime });
+        sendDataResponse({ dataChanged: false });
         // Publish MQTT message for no data change
-        publishMessage(mqttConfig.topic, { dataChanged: false, lastChangeTime });
+        publishMessage(mqttConfig.topic, { dataChanged: false });
       }
     }
   } catch (error) {
