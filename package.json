@@ -1,6 +1,6 @@
 {
   "name": "influxdb-mqtt-monitor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A web server to monitor changes in InfluxDB and serve data on HTTP endpoints, with MQTT support.",
   "main": "app.js",
   "scripts": {
