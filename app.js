@@ -18,12 +18,10 @@
 
 
 
-const express = require('express');
 const Influx = require('influx');
 const fs = require('fs');
 const mqtt = require('mqtt');
 
-const app = express();
 
 // Load configuration from config.json
 const config = JSON.parse(fs.readFileSync('./config.json', 'utf-8'));
@@ -100,10 +98,6 @@ async function fetchNewData() {
 // Function to send data response
 function sendDataResponse(data) {
   console.log('Sending data response:', data);
-  // Respond to /data endpoint with the data
-  app.get('/data', (req, res) => {
-    res.json(data);
-  });
 }
 
 // Start fetching new data immediately
@@ -125,9 +119,4 @@ process.on('SIGINT', () => {
   process.exit(0);
 });
 
-// Start the server
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
 
